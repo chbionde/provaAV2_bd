@@ -10,3 +10,7 @@ app.get('/',(req,res)=>{
       mensagem:'GRUPOU API'  
     })
 })
+
+app.listen(3000,()=>{
+    console.log('Servidor Rodando...')
+})
