@@ -1,2 +1,2 @@
 const express = require("express");
-const bodyParser= Require("body-parser");
+const bodyParser= require("body-parser");
