@@ -2,6 +2,7 @@ const path = require('path');
 
 const fs = require('fs');
 
+const db = require('../index');
 
 const models = {
 

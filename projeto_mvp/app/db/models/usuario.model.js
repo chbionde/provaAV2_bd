@@ -1,32 +1,32 @@
-const {DataTypes} = require('sequelize');
+const {DataTypes, Sequelize} = require('sequelize');
 
-const name = require('path').basename(__file.replace(".model",""),'.js');
+const name = require('path').basename(__filename.replace(".model",""),'.js');
 
 const sequelize = require('../index').getConnection();
 
 const Usuario = sequelize.define(name, {
     nome_completo: {
-        typer: DataTypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     },
     email: {
-        typer: DataTypes.STRING(50),
+        type: DataTypes.STRING(50),
         allowNull: false
     },
     senha: {
-        typer: DataTypes.STRING(30),
+        type: DataTypes.STRING(30),
         allowNull: false
     },
     ativo: {
-        typer: DataTypes.BOOLEAN,
+        type: DataTypes.BOOLEAN,
         defaultValue: true
     },
     createdAt: {
-        typer: DataTypes.DATE,
+        type: DataTypes.DATE,
         field: 'criado_em'
     },
     createdAt: {
-        typer: DataTypes.DATE,
+        type: DataTypes.DATE,
         field: 'atualizado_em'
     }
 },{

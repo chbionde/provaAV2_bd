@@ -1,8 +1,8 @@
 module.exports = {
     HOST: "localhost",
     USER: "root",
-    PASSWORD: "132",
+    PASSWORD: "root",
     DB: "grupou_db",
     dialect: "mysql",
-    port: 3310
+    port: 3306
 }
