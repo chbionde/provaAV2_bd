@@ -9,9 +9,9 @@ module.exports = (()=>{
         })
     });
     
-    router.get("/:id",(req,res)=>{
+    router.get("/:id", async (req,res)=>{
         
-        const usuario = usuarioController.show(req.params.id)
+        const usuario = await usuarioController.show(req.params.id)
 
         res.json(usuario);
     });
