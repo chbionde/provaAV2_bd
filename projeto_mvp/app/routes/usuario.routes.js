@@ -18,8 +18,8 @@ module.exports = (()=>{
         const usuario = await usuarioController.update(req.body, req.params.id);
         res.json(usuario);
     })
-    router.delete("/", async (req, res)=>{
-        const usuario = await usuarioController.destroy(req.body, req.params.id);
+    router.delete("/:id", async (req, res)=>{
+        const usuario = await usuarioController.destroy(req.params.id);
         res.json(usuario);
     })
 

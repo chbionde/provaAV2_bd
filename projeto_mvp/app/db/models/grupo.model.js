@@ -16,12 +16,10 @@ const Grupo = sequelize.define(name,
         createdAt: {
             type: DataTypes.DATE,
             field: 'criado_em',
-            defaultValue: sequelize.literal("NOW()")
         },
         updatedAt: {
             type: DataTypes.DATE,
             field: 'atualizado_em',
-            defaultValue: sequelize.literal("NOW()")
         }
     },{
         sequelize,
