@@ -13,7 +13,9 @@ exports.show = async (id)=>{
 }
 
 exports.store = async (aluno)=>{
-    const resultado = await models.aluno.create(aluno);
+    const resultado = await models.aluno.create(aluno,{
+        include: ['usuario','hardskills']
+    });
     return resultado;
 }
 

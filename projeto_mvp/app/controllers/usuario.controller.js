@@ -16,7 +16,7 @@ exports.show = async (id)=>{
 
 exports.store = async (usuario)=>{
     const resultado = await models.usuario.create(usuario,{
-        include: ['aluno','questao']
+        include: ['aluno','questoes']
     });
     return resultado;
 }

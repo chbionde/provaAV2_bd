@@ -30,7 +30,7 @@ Aluno.associate = (models) => {
         foreignKey: {
             name: 'id_aluno'
         },
-        as: 'hardskill'
+        as: 'hardskills'
     })
     
     Aluno.belongsToMany(models.softSkill,{
@@ -57,7 +57,7 @@ Aluno.associate = (models) => {
         foreignKey: {
             name: 'id_aluno'
         },
-        as: 'turma'
+        as: 'turmas'
     })
     
     Aluno.hasMany(models.curso,{
