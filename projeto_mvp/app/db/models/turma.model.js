@@ -26,7 +26,14 @@ Turma.associate = models =>{
     Turma.belongsTo(models.disciplina,{
         timestamps: false,
         foreignKey: {
-            name: 'id_disciplina'
+            name: 'id_turma'
+        },
+        as: 'aluno'
+    })
+
+    Turma.belongsTo(models.grupo,{
+        foreignKey: {
+            name: 'id_turma'
         },
         as: 'disciplina'
     })  

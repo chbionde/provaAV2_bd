@@ -36,9 +36,9 @@ Tarefa.associate = (models) => {
         as: 'aluno'
     })
     
-    Tarefa.hasMany(models.grupo,{
+    Tarefa.belongsTo(models.grupo,{
         foreignKey: {
-            name: 'id'
+            name: 'id_grupo'
         },
         as: 'grupo'
     })

@@ -13,7 +13,9 @@ exports.show = async (id)=>{
 }
 
 exports.store = async (tarefa)=>{
-    const resultado = await models.tarefa.create(tarefa);
+    const resultado = await models.tarefa.create(tarefa,{
+        include:['grupo','aluno']
+    });
     return resultado;
 }
 

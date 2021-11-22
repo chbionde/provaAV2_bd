@@ -37,7 +37,7 @@ Curso.associate = models =>{
         foreignKey:{
             name: 'id_curso'
         },
-        as: 'alunos'
+        as: 'aluno'
     })
 
 

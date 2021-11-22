@@ -32,7 +32,7 @@ HardSkill.associate = models => {
         foreignKey: {
             name: 'id_hardskill'
         },
-        as: 'alunos'
+        as: 'aluno'
     })
     
     HardSkill.belongsToMany(models.disciplina,{
