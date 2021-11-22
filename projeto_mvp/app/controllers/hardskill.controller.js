@@ -4,7 +4,7 @@ const models = require('../db/models');
 
 exports.index = async ()=>{
     const resultado = await models.hardskill.findAll({
-        include: ['turmas']
+        include: ['turmas', 'atividadeAvaliacao', 'disciplinas', 'alunos']
     });
     return resultado;
 }
@@ -16,7 +16,7 @@ exports.show = async (id)=>{
 
 exports.store = async (hardskill)=>{
     const resultado = await models.hardskill.create(hardskill,{
-        include: ['turmas']
+        include: ['turmas', 'atividadeAvaliacao', 'disciplinas', 'alunos']
     });
     return resultado;
 }

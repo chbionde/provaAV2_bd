@@ -42,13 +42,6 @@ Grupo.associate = models => {
         },
         as: 'avaliacao360'
     })
-
-    Grupo.hasMany(models.turma,{
-        foreignKey: {
-            name: 'id'
-        },
-        as: 'turma'
-    })
     
     Grupo.hasMany(models.atividadeAvaliacao,{
         foreignKey: {
@@ -64,6 +57,13 @@ Grupo.associate = models => {
             name: 'id_grupo'
         },
         as: 'alunos'
+    })
+
+    Grupo.hasMany(models.turma,{
+        foreignKey: {
+            name: 'id'
+        },
+        as: 'turma'
     })
 
 }
