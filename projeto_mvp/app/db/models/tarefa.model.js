@@ -31,14 +31,14 @@ Tarefa.associate = (models) => {
     
     Tarefa.hasMany(models.aluno,{
         foreignKey: {
-            name: 'id_tarefa'
+            name: 'id'
         },
         as: 'aluno'
     })
     
     Tarefa.hasMany(models.grupo,{
         foreignKey: {
-            name: 'id_tarefa'
+            name: 'id'
         },
         as: 'grupo'
     })

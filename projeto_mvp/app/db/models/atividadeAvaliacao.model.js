@@ -42,16 +42,16 @@ AtividadeAvaliacao.associate = (models) => {
 
     AtividadeAvaliacao.hasMany(models.turma,{
         foreignKey: {
-            name: 'id_atividadeavaliacao'
+            name: 'id_atividadeAvaliacao'
         },
         as: 'turma'
     })
 
     AtividadeAvaliacao.belongsToMany(models.hardskill,{
-        through: 'hardskill_atividadeavaliacao',
+        through: 'hardskill_atividadeAvaliacao',
         timestamps: false,
         foreignKey: {
-            name: 'id_atividadeavaliacao'
+            name: 'id_atividadeAvaliacao'
         },
         as: 'hardskill'
     })

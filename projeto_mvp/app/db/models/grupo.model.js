@@ -31,9 +31,9 @@ Grupo.associate = models => {
     
     Grupo.belongsTo(models.tarefa,{
         foreignKey: {
-            name: 'id_Aluno'
+            name: 'id_tarefa'
         },
-        as: 'grupo'
+        as: 'tarefa'
     })
 
     Grupo.belongsTo(models.avaliacao360,{
@@ -45,16 +45,25 @@ Grupo.associate = models => {
 
     Grupo.hasMany(models.turma,{
         foreignKey: {
-            name: 'id_grupo'
+            name: 'id'
         },
         as: 'turma'
     })
     
     Grupo.hasMany(models.atividadeAvaliacao,{
         foreignKey: {
+            name: 'id'
+        },
+        as: 'atividadeAvaliacao'
+    })
+
+    Grupo.belongsToMany(models.aluno,{
+        through: 'aluno_grupo',
+        timestamps: false,
+        foreignKey: {
             name: 'id_grupo'
         },
-        as: 'atividadeavaliacao'
+        as: 'alunos'
     })
 
 }

@@ -13,7 +13,9 @@ exports.show = async (id)=>{
 }
 
 exports.store = async (avaliacao360)=>{
-    const resultado = await models.avaliacao360.create(avaliacao360);
+    const resultado = await models.avaliacao360.create(avaliacao360,{
+        include:['atividadeAvaliacao','aluno','softskill','grupo']
+    });
     return resultado;
 }
 
