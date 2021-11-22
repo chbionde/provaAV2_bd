@@ -35,7 +35,7 @@ Turma.associate = (models) => {
         foreignKey: {
             name: 'id_turma'
         },
-        as: 'alunos'
+        as: 'aluno'
     })
 
     Turma.belongsTo(models.grupo,{

@@ -29,9 +29,10 @@ const Grupo = sequelize.define(name,
 
 Grupo.associate = models => { 
     
-    Grupo.belongsTo(models.tarefa,{
+
+    Grupo.hasMany(models.tarefa,{
         foreignKey: {
-            name: 'id_tarefa'
+            name: 'id'
         },
         as: 'tarefa'
     })
@@ -63,7 +64,7 @@ Grupo.associate = models => {
         foreignKey: {
             name: 'id_grupo'
         },
-        as: 'alunos'
+        as: 'aluno'
     })
 
 }

@@ -13,7 +13,9 @@ exports.show = async (id)=>{
 }
 
 exports.store = async (softSkill)=>{
-    const resultado = await models.softSkill.create(softSkill);
+    const resultado = await models.softSkill.create(softSkill,{
+        include:['aluno', 'avaliacao360']
+    });
     return resultado;
 }
 

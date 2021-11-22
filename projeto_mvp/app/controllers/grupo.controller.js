@@ -14,7 +14,7 @@ exports.show = async (id)=>{
 
 exports.store = async (grupo)=>{
     const resultado = await models.grupo.create(grupo,{
-        include: ['tarefa','avaliacao360','turma','atividadeAvaliacao','alunos']
+        include: ['tarefa','avaliacao360','turma','atividadeAvaliacao','aluno']
     });
     return resultado;
 }
