@@ -40,7 +40,7 @@ Turma.associate = (models) => {
 
     Turma.belongsTo(models.grupo,{
         foreignKey: {
-            name: 'id_grupo'
+            name: 'id_turma'
         },
         as: 'grupo'
     })
@@ -63,9 +63,9 @@ Turma.associate = (models) => {
 
     Turma.belongsTo(models.atividadeAvaliacao,{
         foreignKey: {
-            name: 'id_atividadeavaliacao'
+            name: 'id_atividadeAvaliacao'
         },
-        as: 'atividadeavaliacao'
+        as: 'atividadeAvaliacao'
     })
 
     Turma.belongsToMany(models.hardskill,{

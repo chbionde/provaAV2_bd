@@ -1,5 +1,5 @@
 const aluno              = require('./aluno.routes');
-const atividadeavaliacao = require('./atividadeavaliacao.routes');
+const atividadeAvaliacao = require('./atividadeAvaliacao.routes');
 const avaliacao360       = require('./avaliacao360.routes');
 const curso              = require('./curso.routes');
 const disciplina         = require('./disciplina.routes');
@@ -17,7 +17,7 @@ const usuario            = require('./usuario.routes');
 module.exports = app => {
     app.use('/api/aluno'               ,aluno);
     app.use('/api/alunohardskill'      ,alunohardskill);
-    app.use('/api/atividadeavaliacao'  ,atividadeavaliacao);
+    app.use('/api/atividadeAvaliacao'  ,atividadeAvaliacao);
     app.use('/api/avaliacao360'        ,avaliacao360);
     app.use('/api/curso'               ,curso);
     app.use('/api/disciplina'          ,disciplina);

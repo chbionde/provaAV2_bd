@@ -29,14 +29,14 @@ Avaliacao360.associate = (models) => {
     
     Avaliacao360.hasMany(models.aluno,{
         foreignKey: {
-            name: 'id_avaliacao360'
+            name: 'id'
         },
         as: 'aluno'
     })
     
     Avaliacao360.hasMany(models.grupo,{
         foreignKey: {
-            name: 'id_avaliacao360'
+            name: 'id'
         },
         as: 'grupo'
     })
@@ -52,9 +52,9 @@ Avaliacao360.associate = (models) => {
 
     Avaliacao360.hasMany(models.atividadeAvaliacao,{
         foreignKey: {
-            name: 'id_avaliacao360'
+            name: 'id'
         },
-        as: 'atividadeavaliacao'
+        as: 'atividadeAvaliacao'
     })
 }
 
