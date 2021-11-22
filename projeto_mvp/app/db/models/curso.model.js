@@ -1,50 +1,48 @@
 const {DataTypes, Sequelize} = require('sequelize');
-
 const name = require('path').basename(__filename.replace(".model",""),'.js');
 
 const sequelize = require('../index').getConnection();
 
-
-const Curso = sequelize.define(name, 
-    {
-        descricao: {
-            type: DataTypes.STRING(50)
-        },
-        codCurso: {
-            type: DataTypes.STRING(50)
-        },
-        createdAt: {
-            type: DataTypes.DATE,
-            field: 'criado_em',
-        },
-        updatedAt: {
-            type: DataTypes.DATE,
-            field: 'atualizado_em',
-        }
-    },{
-        sequelize,
-        tableName: name,
+const Curso = sequelize.define(name,{
+    descricao:{
+        type: DataTypes.STRING(50)
+    },
+    createdAt: {
+        type: DataTypes.DATE,
+        field: 'criado_em'
+    },
+    updatedAt: {
+        type: DataTypes.DATE,
+        field: 'atualizado_em'
     }
-)
+    },
+    {
+        sequelize,
+        tableName:name,
+    }
+);
 
-Curso.associate = models => { 
-    
-    Curso.belongsTo(models.aluno,{
-        foreignKey: {
-            name: 'id_Aluno'
-        },
-        as: 'aluno'
-    })
-
+Curso.associate = models =>{
     Curso.belongsToMany(models.turma,{
-        through: 'turma_curso',
+        through: "turma_curso",
         timestamps: false,
-        foreignKey: {
+        foreignKey:{
             name: 'id_curso'
         },
-        as: 'turma'
+        as: 'turmas'
     })
 
+    Curso.hasMany(models.aluno,{
+        timestamps: false,
+        foreignKey:{
+            name: 'id_curso'
+        },
+        as: 'alunos'
+    })
+
+
 }
+
+
 
 module.exports = Curso;

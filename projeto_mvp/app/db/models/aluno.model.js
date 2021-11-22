@@ -60,9 +60,9 @@ Aluno.associate = (models) => {
         as: 'turmas'
     })
     
-    Aluno.hasMany(models.curso,{
+    Aluno.belongsTo(models.curso,{
         foreignKey: {
-            name: 'id_Aluno'
+            name: 'id'
         },
         as: 'curso'
     })

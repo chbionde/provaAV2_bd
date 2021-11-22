@@ -3,7 +3,9 @@ const models = require('../db/models');
 
 
 exports.index = async ()=>{
-    const resultado = await models.hardskill.findAll();
+    const resultado = await models.hardskill.findAll({
+        include: ['turmas']
+    });
     return resultado;
 }
 
@@ -13,7 +15,9 @@ exports.show = async (id)=>{
 }
 
 exports.store = async (hardskill)=>{
-    const resultado = await models.hardskill.create(hardskill);
+    const resultado = await models.hardskill.create(hardskill,{
+        include: ['turmas']
+    });
     return resultado;
 }
 
