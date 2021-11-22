@@ -69,6 +69,15 @@ HardSkill.associate = models => {
         as: 'questao'
     })
 
+    HardSkill.belongsToMany(models.turma,{
+        through: 'hardskill_turma',
+        timestamps: false,
+        foreignKey: {
+            name: 'id_hardskill'
+        },
+        as: 'turmas'
+    })
+
 }
 
 module.exports = HardSkill;
